@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import RenderCampsite from '../features/campsites/RenderCampsite';
 import { toggleFavorite } from '../features/favorites/favoritesSlice';
 import { useState } from 'react';
+import { postComment } from '../features/comments/commentsSlice';
 
 const CampsiteInfoScreen = ({ route }) => {
     const [showModal, setShowModal] = useState(false);
@@ -22,7 +23,7 @@ const CampsiteInfoScreen = ({ route }) => {
             text,
             campsiteId: campsite.id
         };
-        console.log(newComment);
+        dispatch(postComment(newComment));
         setShowModal(!showModal);
     };
 
@@ -37,7 +38,7 @@ const CampsiteInfoScreen = ({ route }) => {
             <View style={styles.commentItem}>
                 <Text style={{ fontSize: 14 }}>{item.text}</Text>
                 <Rating
-                    startingValue={rating}
+                    startingValue={item.rating}
                     imageSize={10}
                     style={{
                         alignItems: 'flex-start',
