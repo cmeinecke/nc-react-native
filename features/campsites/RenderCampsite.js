@@ -40,7 +40,7 @@ const RenderCampsite = (props) => {
             </Card>
         )
     }
-    return <View />;
+    return <View />
 };
 
 const styles = StyleSheet.create({
@@ -64,6 +64,6 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 20
     }
-})
+});
 
 export default RenderCampsite;
