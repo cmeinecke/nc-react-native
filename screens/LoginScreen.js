@@ -159,7 +159,7 @@ const RegisterTab = () => {
           <Image
             source={{ uri: imageUrl }}
             loadingIndicatorSource={logo}
-            style={styles.image}
+            style={styles.imageStyle}
           />
           <Button title="Camera" onPress={getImageFromCamera} />
         </View>
